@@ -6,10 +6,14 @@ double sigmoid(double x) {
 	return 1 / (1 + exp(-x));
 }
 
+double relu(double x) {
+	return x > 0.0 ? x : 0.0;
+}
+
 typedef double (*func_ptr)(double x);
 
 typedef enum _func_type_e {
-	NONE,SIG,TANH,
+	NONE,SIG,TANH,RELU,
 } func_type_e;
 
 typedef struct _func_t
@@ -22,6 +26,7 @@ typedef struct _func_t
 func_t functions[] = {
 	{SIG, sigmoid},
 	{TANH, tanh},
+	{RELU, relu},
 	{NONE, NULL}
 };
 
@@ -33,6 +38,8 @@ const char * to_func_type_str(func_type_e type) {
 		return "sigmoid";
 	case TANH:
 		return "tanh";
+	case RELU:
+		return "relu";
 	default:
 		break;
 	}
