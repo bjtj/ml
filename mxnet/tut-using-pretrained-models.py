@@ -29,7 +29,7 @@ filename = mx.test_utils.download('https://github.com/dmlc/web-data/blob/master/
 # load the image as a ndarray
 image = mx.image.imread(filename)
 # plt.imshow(image.asnumpy())
-cv2.imshow('preview', image.asnumpy())
+cv2.imshow('preview', cv2.cvtColor(image.asnumpy(), cv2.COLOR_RGB2BGR))
 
 cv2.waitKey(0)
 
