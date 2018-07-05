@@ -1,0 +1,3 @@
+RUN
+
+$ gnuplot <script file>
