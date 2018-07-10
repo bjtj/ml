@@ -1,7 +1,5 @@
 #!/usr/bin/env python
 
-# from 'https://github.com/Simshang/pycaffe/blob/master/mnist.py'
-
 import os
 import caffe
 from caffe import layers as L, params as P, proto, to_proto
