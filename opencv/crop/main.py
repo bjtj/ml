@@ -8,7 +8,7 @@ class Rect:
         self.w = w
         self.h = h
         self.r = x + w
-        self.b = x + h
+        self.b = y + h
 
 
 def load_lena():
