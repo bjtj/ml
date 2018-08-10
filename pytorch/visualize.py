@@ -44,10 +44,18 @@ def make_dot(var, params):
     add_nodes(var.grad_fn)
     return dot
 
-inputs = torch.randn(1, 3, 224, 224)
-resnet18 = models.resnet18()
-y = resnet18(Variable(inputs))
-# print('y({}): {}'.format(len(y[0]), y))
+def test():
+    inputs = torch.randn(1, 3, 224, 224)
+    resnet18 = models.resnet18()
+    y = resnet18(Variable(inputs))
+    g = make_dot(y, resnet18.state_dict())
+    g.render('x.gv', view=True)
 
-g = make_dot(y, resnet18.state_dict())
-g.render('x.gv', view=True)
+
+def main():
+    test()
+
+if __name__ == '__main__':
+    main()
+
+
