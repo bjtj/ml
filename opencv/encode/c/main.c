@@ -7,7 +7,6 @@
 
 int main(int argc, char *argv[])
 {
-
 	CvCapture * cap = cvCaptureFromCAM(0);
 	IplImage * frame = cvQueryFrame(cap);
 	CvMat * mat = cvEncodeImage(".jpg", frame, 0);
@@ -21,6 +20,10 @@ int main(int argc, char *argv[])
 	}
 	fwrite(mat->data.ptr, 1, mat->step, fp);
 	fclose(fp);
+
+	cvReleaseImage(&frame);
+	cvReleaseMat(&mat);
+	cvReleaseCapture(&cap);
     
     return 0;
 }
