@@ -26,6 +26,7 @@ def main():
     cv2.waitKey(0)
 
     draw_rect(img, Rect(50, 50, 100, 100))
+    cv2.putText(img, 'hello', (50, 40), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2, cv2.LINE_AA)
     cv2.imshow('preview', img)
     cv2.waitKey(0)
     
