@@ -1,0 +1,7 @@
+
+
+# Prerequisites
+
+* opencv
+* dlib
+* openface
